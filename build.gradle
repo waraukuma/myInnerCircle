@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'war'
+}
+
+group = 'com.myInnerCircle'
+version = '0.0.1-SNAPSHOT'
+description = 'myInnerCircle project for SpringLegacy'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+	flatDir {
+		dirs 'libs'
+	}
+}
+
+dependencies {
+	// Spring MVC (Legacy)
+	implementation 'org.springframework:spring-context:5.3.30'
+	implementation 'org.springframework:spring-webmvc:5.3.30'
+	implementation 'org.springframework:spring-web:5.3.30'
+
+	// Servlet
+	providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+//	providedCompile 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+//	providedCompile 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+
+	// JPA
+	implementation 'org.springframework:spring-orm:5.3.30'
+	implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+
+	// CUBRID JDBC (local jar)
+	implementation name: 'cubrid_jdbc'
+
+	// View
+	implementation 'org.thymeleaf:thymeleaf-spring5:3.1.2.RELEASE'
+
+	// Swagger
+//	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
+
+	// Test
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+	testImplementation 'org.springframework:spring-test:5.3.30'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
