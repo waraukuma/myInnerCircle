@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TestController {
 
     @GetMapping("/")
+    public String home() {
+        return "index";
+    }
+
+    @GetMapping("/test")
     @ResponseBody
     public String test() {
 
