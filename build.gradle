@@ -26,8 +26,13 @@ dependencies {
 	implementation 'org.springframework:spring-webmvc:5.3.30'
 	implementation 'org.springframework:spring-web:5.3.30'
 
+	// Jackson (springfox 필수) 202601114
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.7'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.12.7'
+
 	// Servlet
-	providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+	providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
 //	providedCompile 'jakarta.servlet:jakarta.servlet-api:5.0.0'
 //	providedCompile 'jakarta.servlet:jakarta.servlet-api:5.0.0'
 
@@ -43,10 +48,16 @@ dependencies {
 
 	// Swagger
 //	implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
+// springfox (Spring MVC 완벽 호환)
+//	implementation 'io.springfox:springfox-swagger2:3.0.0'
+//	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 
 	// Logging
+//	implementation 'ch.qos.logback:logback-classic:1.2.13'
 	implementation 'org.slf4j:slf4j-api:1.7.36'
-	implementation 'ch.qos.logback:logback-classic:1.2.13'
+	implementation 'ch.qos.logback:logback-classic:1.4.14'
 
 	// Test
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
