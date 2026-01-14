@@ -11,10 +11,10 @@
           http://www.springframework.org/schema/tx
           https://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- Service / Repository 스캔 -->
+    <!-- Service / Repository / Config 스캔 -->
     <context:component-scan base-package="com.myInnerCircle">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-    </context:component-scan>
+     </context:component-scan>
 
     <!-- 트랜잭션 활성화 (JPA 연결 시 필수) -->
     <tx:annotation-driven/>
