@@ -10,20 +10,20 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableSwagger2
 @Configuration
+@EnableSwagger2
 public class SwaggerConfig {
 
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .host("localhost:8080")
+                .host("localhost:8080")//Base URL 명시
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.myInnerCircle.controller"))
-                .paths(PathSelectors.ant("/api/**"))
+                .paths(PathSelectors.ant("/api/**"))//API 경로 제한
                 .build()
                 .apiInfo(apiInfo())
-                .pathMapping("/");
+                .pathMapping("/"); //컨텍스트 루트 명시
     }
 
     private ApiInfo apiInfo() {
