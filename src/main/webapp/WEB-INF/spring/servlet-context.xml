@@ -18,6 +18,9 @@
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/resources/**" location="/resources/" />
+<!--    <mvc:resources mapping="/swagger-ui.html" location="classpath:/META-INF/resources/" />-->
+<!--    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />-->
+
 
     <!-- Thymeleaf -->
     <bean id="templateResolver"
