@@ -16,7 +16,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
      </context:component-scan>
 
-    <!-- 트랜잭션 활성화 (JPA 연결 시 필수) -->
+    <!-- 트랜잭션 활성화  -->
     <tx:annotation-driven/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
