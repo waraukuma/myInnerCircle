@@ -40,7 +40,7 @@ dependencies {
 	implementation 'org.springframework:spring-orm:5.3.30'
 	implementation 'org.hibernate:hibernate-core:5.6.15.Final'
 
-	// CUBRID JDBC (local jar)
+	// CUBRID JDBC (local)
 	implementation name: 'cubrid_jdbc'
 
 	// View
